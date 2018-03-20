@@ -1,19 +1,26 @@
 plugin-prefix: "&b[&7CalculatorPlus&b]"
 
+# Organized by command
 messages:
+ # Addition
   add: "/cp add <first number> <second number> etc"
-  subtract: "/cp subtract <first number> <second number> etc"
-  multiply: "/cp multiply <first number> <second number> etc"
-  divide: "/cp divide <first number> <second number> etc"
-  quadratic: "/cp quadratic <a> <b> <c> (ax^2 + bx + c)"
-  not-valid-number: "&cOne or more of your numbers was not valid. Please try again."
   answer-add: "&aYour added numbers equal {answer}"
+ # Subtraction
+  subtract: "/cp subtract <first number> <second number> etc"
   answer-subtract: "&aYour subtracted numbers equal {answer}"
+ # Multiplication
+  multiply: "/cp multiply <first number> <second number> etc"
   answer-multiply: "&aYour multiplied numbers equal {answer}"
+ # Division
+  divide: "/cp divide <first number> <second number> etc"
   answer-divide: "&aYour divided numbers equal {answer}"
- # Quadratic messages
+ # Quadratic
+  quadratic: "/cp quadratic <a> <b> <c> (ax^2 + bx + c)"
   real-unequal: "Roots are real and unequal"
   real-equal: "Roots are real and equal"
   imaginary: "Roots are imaginary"
   root-one: "Root one is {root}"
   root-two: "Root two is {root}"
+ # Error
+  not-valid-number: "&cOne or more of your numbers was not valid. Please try again."
+

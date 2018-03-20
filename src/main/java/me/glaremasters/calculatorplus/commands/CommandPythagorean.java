@@ -9,10 +9,10 @@ import org.bukkit.entity.Player;
 /**
  * Created by GlareMasters on 3/20/2018.
  */
-public class CommandQuadratic extends CommandBase {
+public class CommandPythagorean extends CommandBase {
 
-    public CommandQuadratic() {
-        super("quadratic", "Quadratic formula", "cp.quadratic", false, null, null, 3, 3);
+    public CommandPythagorean() {
+        super("quadratic", "Pythangorean theorem", "cp.pythagorean", false, null, null, 3, 3);
     }
 
     public void execute(Player player, String[] args) {
