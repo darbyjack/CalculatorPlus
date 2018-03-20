@@ -2,7 +2,9 @@ package me.glaremasters.calculatorplus;
 
 import java.util.stream.Stream;
 import me.glaremasters.calculatorplus.commands.CommandAdd;
+import me.glaremasters.calculatorplus.commands.CommandDivide;
 import me.glaremasters.calculatorplus.commands.CommandHelp;
+import me.glaremasters.calculatorplus.commands.CommandMultiply;
 import me.glaremasters.calculatorplus.commands.CommandSubtract;
 import me.glaremasters.calculatorplus.commands.base.CommandHandler;
 import org.bukkit.ChatColor;
@@ -35,7 +37,7 @@ public final class CalculatorPlus extends JavaPlugin {
 
         getCommand("cp").setExecutor(commandHandler);
 
-        Stream.of(new CommandHelp(), new CommandAdd(), new CommandSubtract()).forEach(commandHandler::register);
+        Stream.of(new CommandHelp(), new CommandAdd(), new CommandSubtract(), new CommandMultiply(), new CommandDivide()).forEach(commandHandler::register);
 
     }
 
