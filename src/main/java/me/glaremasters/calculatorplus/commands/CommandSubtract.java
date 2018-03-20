@@ -27,7 +27,7 @@ public class CommandSubtract extends CommandBase {
                 number = Double.valueOf(args[x]);
                 total -= number;
             }
-            player.sendMessage(color(config.getString("messages.answer").replace("{answer}", String.valueOf(total))));
+            player.sendMessage(color(config.getString("messages.answer-subtract").replace("{answer}", String.valueOf(total))));
         } catch (NumberFormatException e) {
             player.sendMessage(color(config.getString("messages.not-valid-number")));
         }
