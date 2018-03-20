@@ -1,8 +1,11 @@
 package me.glaremasters.calculatorplus.commands;
 
 import static me.glaremasters.calculatorplus.util.ColorUtil.color;
+import static me.glaremasters.calculatorplus.util.ColorUtil.color2;
 import me.glaremasters.calculatorplus.CalculatorPlus;
 import me.glaremasters.calculatorplus.commands.base.CommandBase;
+import me.rayzr522.jsonmessage.JSONMessage;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
@@ -10,6 +13,8 @@ import org.bukkit.entity.Player;
  * Created by GlareMasters on 3/19/2018.
  */
 public class CommandDivide extends CommandBase {
+
+    // TODO: 3/20/2018 Fix issue with division not dividing the numbers correctly 
 
     public CommandDivide() {
         super("divide", "Divide two numbers", "cp.divide", false, null, null, 2, -1);
@@ -22,12 +27,25 @@ public class CommandDivide extends CommandBase {
         }
         double number = 0;
         double total = Double.valueOf(args[0]);
+        String signs = config.getString("colors.signs");
+        String inputs = config.getString("colors.inputs");
         try {
             for (int x = 0; x < args.length; x++) {
                 number = Double.valueOf(args[x]);
                 total /= number;
             }
-            player.sendMessage(color(config.getString("messages.answer-divide").replace("{answer}", String.valueOf(total))));
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < args.length; i++) {
+                sb.append(ChatColor.translateAlternateColorCodes('&',
+                        inputs + args[i]))
+                        .append(ChatColor.translateAlternateColorCodes('&',
+                                " " + signs + "/ "));
+            }
+            sb.setLength(sb.length() - 2);
+            JSONMessage.create(color(config.getString("messages.answer-divide")
+                    .replace("{answer}", String.valueOf(total)))).tooltip(
+                    color2(config.getString("messages.solution") + sb.toString().trim() + signs + "= "
+                            + inputs + total)).send(player);
         } catch (NumberFormatException e) {
             player.sendMessage(color(config.getString("messages.not-valid-number")));
         }
