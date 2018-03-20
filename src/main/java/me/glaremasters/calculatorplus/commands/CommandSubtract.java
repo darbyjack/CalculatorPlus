@@ -1,8 +1,10 @@
 package me.glaremasters.calculatorplus.commands;
 
 import static me.glaremasters.calculatorplus.util.ColorUtil.color;
+import static me.glaremasters.calculatorplus.util.ColorUtil.color2;
 import me.glaremasters.calculatorplus.CalculatorPlus;
 import me.glaremasters.calculatorplus.commands.base.CommandBase;
+import me.rayzr522.jsonmessage.JSONMessage;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
@@ -27,7 +29,16 @@ public class CommandSubtract extends CommandBase {
                 number = Double.valueOf(args[x]);
                 total -= number;
             }
-            player.sendMessage(color(config.getString("messages.answer-subtract").replace("{answer}", String.valueOf(total))));
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < args.length; i++) {
+                sb.append(args[i]).append(" - ");
+            }
+            sb.setLength(sb.length() - 2);
+            JSONMessage
+                    .create(color(config.getString("messages.answer-subtract")
+                            .replace("{answer}", String.valueOf(total)))).tooltip(
+                    color2(config.getString("messages.solution") + sb.toString().trim() + " = "
+                            + total)).send(player);
         } catch (NumberFormatException e) {
             player.sendMessage(color(config.getString("messages.not-valid-number")));
         }
