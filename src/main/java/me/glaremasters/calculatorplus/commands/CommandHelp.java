@@ -23,6 +23,7 @@ public class CommandHelp extends CommandBase {
         sender.sendMessage(color(config.getString("messages.multiply")));
         sender.sendMessage(color(config.getString("messages.divide")));
         sender.sendMessage(color(config.getString("messages.quadratic")));
+        sender.sendMessage(color(config.getString("messages.pythagorean")));
 
     }
 

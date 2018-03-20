@@ -12,4 +12,8 @@ public class ColorUtil {
         return ChatColor.translateAlternateColorCodes('&', CalculatorPlus.getPrefix() + string);
     }
 
+    public static String color2(String string) {
+        return ChatColor.translateAlternateColorCodes('&', string);
+    }
+
 }

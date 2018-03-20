@@ -12,35 +12,20 @@ import org.bukkit.entity.Player;
 public class CommandPythagorean extends CommandBase {
 
     public CommandPythagorean() {
-        super("quadratic", "Pythangorean theorem", "cp.pythagorean", false, null, null, 3, 3);
+        super("pythagorean", "Pythagorean theorem", "cp.pythagorean", false, null, null, 2, 2);
     }
 
     public void execute(Player player, String[] args) {
-        int a, b, c;
-        double r1, r2, d;
+        int a, b;
+        double answer;
         FileConfiguration config = CalculatorPlus.getI().getConfig();
         try {
             a = Integer.valueOf(args[0]);
             b = Integer.valueOf(args[1]);
-            c = Integer.valueOf(args[2]);
 
-            d = b * b - 4 * a * c;
+            answer = Math.sqrt(Math.pow(a,2) + Math.pow(b,2));
+            player.sendMessage(color(config.getString("messages.answer-pythagorean").replace("{answer}", String.valueOf(answer))));
 
-            if (d > 0) {
-                player.sendMessage(color(config.getString("messages.real-unequal")));
-                r1 = ( - b + Math.sqrt(d))/(2*a);
-                r2 = ( - b - Math.sqrt(d))/(2*a);
-                player.sendMessage(color(config.getString("messages.root-one").replace("{root}", String.valueOf(r1))));
-                player.sendMessage(color(config.getString("messages.root-two").replace("{root}", String.valueOf(r2))));
-            }
-            else if (d == 0) {
-                player.sendMessage(color(config.getString("messages.real-equal")));
-                r1 = ( - b + Math.sqrt(d))/(2*a);
-                player.sendMessage(color(config.getString("messages.root-one").replace("{root}", String.valueOf(r1))));
-            }
-            else {
-                player.sendMessage(color(config.getString("messages.imaginary")));
-            }
 
         } catch (NumberFormatException e) {
             player.sendMessage(color(config.getString("messages.not-valid-number")));

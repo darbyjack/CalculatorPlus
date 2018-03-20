@@ -21,6 +21,11 @@ messages:
   imaginary: "Roots are imaginary"
   root-one: "Root one is {root}"
   root-two: "Root two is {root}"
+ # Pythagorean
+  pythagorean: "/cp pythagorean <a> <b> (a^2 + b^2 = c^2)"
+  answer-pythagorean: "Given A and B, C equals {answer}"
  # Error
   not-valid-number: "&cOne or more of your numbers was not valid. Please try again."
+ # Tooltips
+  solution: "&aSolution: "
 
