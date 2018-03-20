@@ -1,0 +1,9 @@
+plugin-prefix: "&b[&7CalculatorPlus&b]"
+
+messages:
+  add: "/cp add <first number> <second number> etc"
+  subtract: "/cp subtract <first number> <second number> etc"
+  multiply: "/cp multiply <first number> <second number> etc"
+  divide: "/cp add <first number> <second number> etc"
+  not-valid-number: "&cOne or more of your numbers was not valid. Please try again."
+  answer: "&aYour answer is: {answer}"

@@ -3,3 +3,7 @@ version: ${project.version}
 main: me.glaremasters.calculatorplus.CalculatorPlus
 authors: [blockslayer22]
 description: Easy to use in game calculator
+
+commands:
+  cp:
+    description: /cp
