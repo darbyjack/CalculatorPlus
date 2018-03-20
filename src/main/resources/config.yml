@@ -1,31 +1,37 @@
 plugin-prefix: "&b[&7CalculatorPlus&b]"
 
+# Tooltip hover colors
+colors:
+  signs: "&7"
+  inputs: "&a"
+
 # Organized by command
 messages:
  # Addition
-  add: "/cp add <first number> <second number> etc"
+  add: "&a/cp add &7<#1> <#2> <#3> etc..."
   answer-add: "&aYour added numbers equal {answer}"
  # Subtraction
-  subtract: "/cp subtract <first number> <second number> etc"
+  subtract: "&a/cp subtract &7<#1> <#2> <#3> etc..."
   answer-subtract: "&aYour subtracted numbers equal {answer}"
  # Multiplication
-  multiply: "/cp multiply <first number> <second number> etc"
+  multiply: "&a/cp multiply &7<#1> <#2> <#3> etc..."
   answer-multiply: "&aYour multiplied numbers equal {answer}"
  # Division
-  divide: "/cp divide <first number> <second number> etc"
+  divide: "&a/cp divide &7<#1> <#2> <#3> etc..."
   answer-divide: "&aYour divided numbers equal {answer}"
  # Quadratic
-  quadratic: "/cp quadratic <a> <b> <c> (ax^2 + bx + c)"
+  quadratic: "&a/cp quadratic &7<a> <b> <c>"
   real-unequal: "Roots are real and unequal"
   real-equal: "Roots are real and equal"
   imaginary: "Roots are imaginary"
   root-one: "Root one is {root}"
   root-two: "Root two is {root}"
  # Pythagorean
-  pythagorean: "/cp pythagorean <a> <b> (a^2 + b^2 = c^2)"
+  pythagorean: "&a/cp pythagorean &7<a> <b>"
   answer-pythagorean: "Given A and B, C equals {answer}"
  # Error
   not-valid-number: "&cOne or more of your numbers was not valid. Please try again."
  # Tooltips
   solution: "&8Solution: "
+  formula: "&7Forumla: "
 

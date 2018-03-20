@@ -32,13 +32,14 @@ public class CommandAdd extends CommandBase {
             }
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < args.length; i++) {
-                sb.append(ChatColor.translateAlternateColorCodes('&', "&a" + args[i])).append(ChatColor.translateAlternateColorCodes('&', " &7+ "));
+                sb.append(ChatColor.translateAlternateColorCodes('&', config.getString("colors.inputs") + args[i]))
+                        .append(ChatColor.translateAlternateColorCodes('&', " " + config.getString("colors.signs") + "+ "));
             }
             sb.setLength(sb.length() - 2);
             JSONMessage.create(color(config.getString("messages.answer-add")
                     .replace("{answer}", String.valueOf(total)))).tooltip(
-                    color2(config.getString("messages.solution") + sb.toString().trim() + "= "
-                            + "&a" + total)).send(player);
+                    color2(config.getString("messages.solution") + sb.toString().trim() + config.getString("colors.signs") + "= "
+                            + config.getString("colors.inputs") + total)).send(player);
         } catch (NumberFormatException e) {
             player.sendMessage(color(config.getString("messages.not-valid-number")));
         }
