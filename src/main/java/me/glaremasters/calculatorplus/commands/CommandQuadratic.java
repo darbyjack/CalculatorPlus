@@ -1,14 +1,16 @@
 package me.glaremasters.calculatorplus.commands;
 
-import static me.glaremasters.calculatorplus.util.ColorUtil.color;
-import static me.glaremasters.calculatorplus.util.ColorUtil.color2;
-import java.text.DecimalFormat;
 import me.glaremasters.calculatorplus.CalculatorPlus;
 import me.glaremasters.calculatorplus.commands.base.CommandBase;
 import me.rayzr522.jsonmessage.JSONMessage;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
+
+import java.text.DecimalFormat;
+
+import static me.glaremasters.calculatorplus.util.ColorUtil.color;
+import static me.glaremasters.calculatorplus.util.ColorUtil.color2;
 
 /**
  * Created by GlareMasters on 3/20/2018.
@@ -52,8 +54,11 @@ public class CommandQuadratic extends CommandBase {
                 r1 = (-b + Math.sqrt(d)) / (2 * a);
 
                 String r1Format = df.format(r1);
-                player.sendMessage(color(config.getString("messages.roots")
-                        .replace("{root1}", r1Format).replace("{root2}", "")));
+                JSONMessage.create(color(config.getString("messages.roots")
+                        .replace("{root1}", r1Format).replace("{root2}", "")))
+                        .tooltip(color2(config.getString("messages.solution") + ChatColor.RESET + "\nRoot: "
+                                + signs + "-" + inputs + b + signs + " + √(" + inputs + d + signs + ") / (2 * " + inputs + a + signs + ")"))
+                        .send(player);
             } else {
                 player.sendMessage(color(config.getString("messages.imaginary")));
             }
