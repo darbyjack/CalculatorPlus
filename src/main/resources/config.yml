@@ -24,8 +24,7 @@ messages:
   real-unequal: "Roots are real and unequal"
   real-equal: "Roots are real and equal"
   imaginary: "Roots are imaginary"
-  root-one: "Root one is {root}"
-  root-two: "Root two is {root}"
+  roots: "Roots are {root1} and {root2}"
  # Pythagorean
   pythagorean: "&a/cp pythagorean &7<a> <b>"
   answer-pythagorean: "Given A and B, C equals {answer}"
