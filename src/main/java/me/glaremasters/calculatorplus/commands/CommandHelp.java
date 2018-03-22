@@ -31,6 +31,7 @@ public class CommandHelp extends CommandBase {
         JSONMessage.create(color(config.getString("messages.pythagorean")))
                 .tooltip(color2(config.getString("messages.formula") + "(a^2 + b^2 = c^2)"))
                 .send((Player) sender);
+        sender.sendMessage(color(config.getString("messages.area")));
 
     }
 

@@ -2,6 +2,7 @@ package me.glaremasters.calculatorplus;
 
 import java.util.stream.Stream;
 import me.glaremasters.calculatorplus.commands.CommandAdd;
+import me.glaremasters.calculatorplus.commands.CommandArea;
 import me.glaremasters.calculatorplus.commands.CommandDivide;
 import me.glaremasters.calculatorplus.commands.CommandHelp;
 import me.glaremasters.calculatorplus.commands.CommandMultiply;
@@ -38,7 +39,7 @@ public final class CalculatorPlus extends JavaPlugin {
         getCommand("cp").setExecutor(commandHandler);
 
         Stream.of(new CommandHelp(), new CommandAdd(), new CommandSubtract(), new CommandMultiply(),
-                new CommandDivide(), new CommandQuadratic(), new CommandPythagorean()).forEach(commandHandler::register);
+                new CommandDivide(), new CommandQuadratic(), new CommandPythagorean(), new CommandArea()).forEach(commandHandler::register);
 
     }
 

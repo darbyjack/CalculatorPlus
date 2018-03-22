@@ -28,6 +28,9 @@ messages:
  # Pythagorean
   pythagorean: "&a/cp pythagorean &7<a> <b>"
   answer-pythagorean: "Answer: {answer}"
+ # Area
+  area: "&a/cp area &7<shape> <length> <height>"
+  area-answer: "The area of the {shape} is: {area}"
  # Error
   not-valid-number: "&cOne or more of your numbers was not valid. Please try again."
  # Tooltips
