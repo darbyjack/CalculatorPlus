@@ -47,6 +47,11 @@ public class CommandArea extends CommandBase {
                 player.sendMessage(color(config.getString("messages.not-valid-number")));
             }
         }
+        if (args[0].equalsIgnoreCase("triangle")) {
+            if (args.length != 3) {
+                return;
+            }
+        }
     }
 
 }
